@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Shopping Cart || Home Page</title>
+    <link rel="stylesheet" href="css/style.css"/>
+    <link rel="stylesheet" href="css/all.css"/>
+      <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+   
+</head>
+<body>
+
+
+<div class="bg-[#FCFAF7] font-[Poppins]">
+
+
+<header class=" head shadow-sm">
+
+<div class="max-w-7xl mx-auto px-5 lg:px-8 py-2">
+
+<div class="flex flex-col md:flex-row justify-between items-center gap-6">
+
+<div  class="flex justify-center md:justify-start">
+
+    <img src="images/logo.png"
+         alt=" Logo"
+         class="w-70 sm:w-44 md:w-48 lg:w-52 object-contain">
+
+</div>
+
+<!-- <h1 class="font-['Cormorant_Garamond'] text-[#5E3D3D] text-5xl font-semibold tracking-[6px]">
+
+LUXORA </h1> <p class="tracking-[8px] text-[#9D7E71] mt-2 text-center md:text-left">
+
+PERFUME</p> -->
+
+<div class="flex gap-4">
+<div   id="bothBtn">
+ <a   class="px-8 py-3 rounded-xl border border-[#6E4E4A] text-[#6E4E4A] hover:bg-[#6E4E4A] hover:text-white duration-300"  href="login.html" target="_blank" 
+  onclick="redirectTO('login.html')"  >Login</a>
+
+<a    onclick="redirectTO('register.html')"  
+ class="px-8 py-3 rounded-xl bg-[#6E4E4A] text-white hover:bg-[#543735] duration-300" href="register.html" target="_blank" onclick="register()"   >Register</a>
+</div>
+ <div class="flex items-center gap-5">
+
+    <span id="usernameDisplay" class="text-[#6E4E4A] font-medium"></span>
+
+    <div id="cartContainer" class="hidden flex items-center gap-3">
+
+        <button onclick="window.location.href='cart.html'" class="relative">
+
+            <i class="fa-solid fa-cart-shopping text-2xl text-[#6E4E4A]"></i>
+
+            <span id="cartCount"
+            class="absolute -top-2 -right-2 w-5 h-5 rounded-full bg-[#B08968] text-white text-xs flex items-center justify-center">
+
+            0
+
+            </span>
+
+        </button>
+
+        <button
+        onclick="window.location.href='cart.html'"
+        class="px-4 py-2 rounded-lg bg-[#B08968] text-white hover:bg-[#9C7458]">
+
+        View Cart
+
+        </button>
+
+    </div>
+
+    <button
+    id="logoutBtn"
+    onclick="logout()"
+    class="hidden px-5 py-2 rounded-lg border border-[#B08968] text-[#B08968] hover:bg-[#B08968] hover:text-white">
+
+    Logout
+
+    </button>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+ <div id="cartContainer" class="relative hidden">
+
+    <button
+        id="cartDropdown"
+        onclick="toggleCartDropdown()"
+        class="relative">
+
+        <i class="fa-solid fa-cart-shopping text-2xl text-[#6E4E4A]"></i>
+
+        <span
+            id="cartCount"
+            class="absolute -top-2 -right-2 bg-[#B08968] text-white text-xs w-5 h-5 rounded-full flex items-center justify-center">
+            0
+        </span>
+
+    </button>
+
+    <div
+        id="cartDropdownItems"
+        class="hidden absolute right-0 mt-4 w-80 bg-white rounded-2xl shadow-xl p-4 z-50">
+
+    </div>
+
+</div>
+
+</div>
+
+</div>
+
+</header>
+
+
+
+<section class="max-w-7xl mx-auto px-5 lg:px-8 py-2">
+    <div class="bg-white rounded-2xl shadow-md p-5 mt-8">
+
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-5">
+
+<div class="lg:col-span-3">
+
+<div class="relative">
+
+<!-- <i class="fa-solid fa-sliders absolute left-5 top-1/2 -translate-y-1/2 text-[#6E4E4A]"></i> -->
+
+<select id="searchType"
+  class="w-full h-14 rounded-xl border border-[#E7DDD3]  text-[#6B4F3A] outline-none focus:ring-2 focus:ring-[#D8C3A5] focus:border-[#A88F8C] pl-4">
+  <option value="name"  class="text-[#6B4F3A] bg-[#F8F4EF]"> Search by Product Name </option>
+  <option  value="Category"   class="text-[#6B4F3A] bg-[#F8F4EF]">  Category</option>
+  <option value="price"  class="text-[#6B4F3A] bg-[#F8F4EF]">  Price</option>
+</select>
+</div>
+
+</div>
+
+<div class="lg:col-span-7">
+
+<div class="relative">
+
+<input id="searchBox"
+type="text"
+placeholder="Search..."
+class="w-full h-14 rounded-xl border border-[#E7DDD3] pl-5 pr-14 outline-none focus:border-[#6E4E4A]">
+
+<i class="fa-solid fa-magnifying-glass absolute right-5 top-1/2 -translate-y-1/2 text-[#6E4E4A]"></i>
+
+</div>
+
+</div>
+
+<div class="lg:col-span-2">
+
+ <button class="w-full h-14 rounded-xl bg-[#6E4E4A] text-white hover:bg-[#543735] duration-300" onclick="searchProducts()"   >Search</button>
+
+</div>
+
+</div>
+
+</div>
+
+
+    <div  id="products-row"   class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 mt-8 gap-8">
+
+    </div>
+
+    <div id="cartDropdownItems"></div>
+
+    <script src="js/script.js"></script>
+  
+</body>
+
+</html>

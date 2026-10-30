@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart page</title>
+      <link rel="stylesheet" href="css/style.css"/>
+    <link rel="stylesheet" href="css/all.css"/>
+      <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+</head>
+<body>
+     <header class="bg-[#F8F4EF] shadow-sm">
+      <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+            <a href="index.html"> <img src="./images/logo.png" class="h-16 md:h-20"  alt="Logo">  </a>
+      </div>
+    </header>
+    <section class="max-w-7xl mx-auto px-5 py-10">
+
+<h2 class="text-3xl font-['Cormorant_Garamond'] text-[#5E3D3D] mb-8">Shopping Cart</h2>
+
+<div id="cart-items" class="grid grid-cols-1 md:grid-cols-2 gap-6"></div>
+
+ <div class="mt-8 bg-white rounded-2xl shadow-md p-5 flex flex-col sm:flex-row items-center justify-between gap-4">
+
+<h3 class="text-2xl font-semibold text-[#5E3D3D]">Total Price</h3>
+
+<span id="totalPrice" class="text-3xl font-bold text-[#B08968]">$0</span>
+
+</div>
+
+</section>
+
+<section class="max-w-7xl mx-auto px-5 pb-12">
+
+<h2 class="text-3xl font-['Cormorant_Garamond'] text-[#5E3D3D] mb-8">Favorite Items</h2>
+
+<div id="favorite-items" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"></div>
+<!-- <div id="cart-items"></div>
+<span id="totalPrice"></span> -->
+<!-- <div id="favorite-items"></div> -->
+</section>
+<script src="js/script.js"></script>
+
+</body>
+</html>
